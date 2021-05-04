@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:my_uvs/paramConnection/auth.dart';
-import 'package:rest_api_login/screens/home_Screen.dart';
 import 'package:my_uvs/paramConnection/login_Screen.dart';
 import 'package:my_uvs/paramConnection/http_exception.dart';
+import 'package:my_uvs/navigator_home_screen.dart';
 
 class SignUpScreen extends StatefulWidget {
   @override
@@ -28,7 +28,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           .signUp(_authData['ine'], _authData['mdp'])
           .then((_) {
         Navigator.of(context)
-            .pushReplacement(MaterialPageRoute(builder: (ctx) => HomeScreen()));
+            .pushReplacement(MaterialPageRoute(builder: (ctx) => NavigationHomeScreen()));
         Navigator.of(context).pop();
       });
     } on HttpException catch (e) {
