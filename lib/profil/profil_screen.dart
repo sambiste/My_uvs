@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:my_uvs/profil/profileModel.dart';
-import 'package:my_uvs/profil/NetworkHandler.dart';
-
 
 class ProfilePage extends StatefulWidget {
 
@@ -14,24 +11,12 @@ class ProfilePage extends StatefulWidget {
 class MapScreenState extends State<ProfilePage>
     with SingleTickerProviderStateMixin {
   bool _status = true;
-  NetworkHandler networkHandler = NetworkHandler();
-  ProfileModel profileModel = ProfileModel ();
   final FocusNode myFocusNode = FocusNode();
 
   @override
   void initState() {
-      super.initState();
-
-      fetchData();
-    }
-
-    void fetchData() async {
-      var response = await networkHandler.get("/profile/getData");
-      setState(() {
-        profileModel = ProfileModel.fromJson(response["data"]);
-
-      });
-    }
+    // TODO: implement initState
+    super.initState();
   }
 
   @override
@@ -165,7 +150,7 @@ class MapScreenState extends State<ProfilePage>
                                       padding: EdgeInsets.only(right: 10.0),
                                       child: new TextField(
                                         decoration: const InputDecoration(
-                                            hintText: "profileModel.prenom"),
+                                            hintText: "Souleymane"),
                                         enabled: !_status,
                                       ),
                                     ),
@@ -174,7 +159,7 @@ class MapScreenState extends State<ProfilePage>
                                   Flexible(
                                     child: new TextField(
                                       decoration: const InputDecoration(
-                                          hintText: "profileModel.nom"),
+                                          hintText: "Diop"),
                                       enabled: !_status,
                                     ),
                                     flex: 2,
@@ -224,7 +209,7 @@ class MapScreenState extends State<ProfilePage>
                                       padding: EdgeInsets.only(right: 10.0),
                                       child: new TextField(
                                         decoration: const InputDecoration(
-                                            hintText: "profileModel.dateNaiss"),
+                                            hintText: "25/12/1996"),
                                         enabled: !_status,
                                       ),
                                     ),
@@ -233,7 +218,7 @@ class MapScreenState extends State<ProfilePage>
                                   Flexible(
                                     child: new TextField(
                                       decoration: const InputDecoration(
-                                          hintText: "profileModel.lieuNaiss"),
+                                          hintText: "Podor"),
                                       enabled: !_status,
                                     ),
                                     flex: 2,
@@ -284,7 +269,7 @@ class MapScreenState extends State<ProfilePage>
                                       padding: EdgeInsets.only(right: 10.0),
                                       child: new TextField(
                                         decoration: const InputDecoration(
-                                            hintText: "profileModel.tel"),
+                                            hintText: "775854210"),
                                         enabled: !_status,
                                       ),
                                     ),
@@ -293,7 +278,7 @@ class MapScreenState extends State<ProfilePage>
                                   Flexible(
                                     child: new TextField(
                                       decoration: const InputDecoration(
-                                          hintText: "ine"),
+                                          hintText: "N0A1B220181"),
                                       enabled: !_status,
                                     ),
                                     flex: 2,
@@ -312,7 +297,7 @@ class MapScreenState extends State<ProfilePage>
                                     mainAxisSize: MainAxisSize.min,
                                     children: <Widget>[
                                       new Text(
-                                        'profileModel.mailInstitutionnel',
+                                        'Mail Institutionnel',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
